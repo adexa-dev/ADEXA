@@ -1,0 +1,20 @@
+/* base.css — المتغيرات (ألوان/ثيمات/خطوط)، الإعدادات العامة، الأزرار، العناوين */
+
+/* متغيرات الألوان للثيم الفاتح (الافتراضي). غيّر ألوان البراند من هون */
+:root{--bg:#F0F7FF;--bg2:#DBEAFE;--card:#fff;--tx:#0B1F3B;--tx2:#64748B;--bl:#2563EB;--ac:#60A5FA;--bd:#c9d9ee;--nv:#0B1F3B;--f:'Inter',system-ui,sans-serif;--sh:0 10px 30px rgba(11,31,59,.08)}
+/* ألوان الثيم الداكن: بتتفعّل لما data-theme=dark على <html> */
+:root[data-theme=dark]{--bg:#071426;--bg2:#0B1F3B;--card:#102746;--tx:#F8FAFC;--tx2:#A8B8CC;--bd:#1d3a63;--sh:0 10px 30px rgba(0,0,0,.35)}
+/* خط عربي (Tajawal) لما الاتجاه RTL */
+:root[dir=rtl]{--f:'Tajawal','Inter',sans-serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:var(--f);background:var(--bg);color:var(--tx);overflow-x:hidden;transition:background .4s,color .4s;padding-top:env(safe-area-inset-top,0)}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;color:inherit;background:none}
+section{padding:96px 5vw;position:relative}.wrap{max-width:1200px;margin:auto}
+h2{font-size:clamp(28px,4.5vw,52px);font-weight:900;line-height:1.1;margin-bottom:14px;letter-spacing:-.02em}
+.eye{color:var(--bl);font-weight:800;letter-spacing:.2em;font-size:13px;margin-bottom:12px;display:block}
+.sub{color:var(--tx2);max-width:680px;font-size:18px;line-height:1.7}
+/* الأزرار الأساسية (.btn) والأزرار المحدّدة (.o) */
+.btn{display:inline-block;padding:14px 28px;border-radius:99px;font-weight:700;background:var(--bl);color:#fff;transition:transform .2s,box-shadow .2s}
+.btn:hover{box-shadow:0 8px 24px rgba(37,99,235,.4)}.btn.o{background:none;border:1.5px solid var(--ac);color:inherit}
+/* .dk = قسم بخلفية كحلية داكنة (بيقلب متغيرات الألوان داخله) */
+.dk{background:linear-gradient(180deg,#071426,#0B1F3B);color:#F8FAFC;--tx2:#A8B8CC;--card:#102746;--bd:#1d3a63}

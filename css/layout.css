@@ -1,0 +1,28 @@
+/* layout.css — الهيكل الكبير: شريط التنقل، المقدمة السينمائية، قسم الـ Hero */
+
+/* ===== شريط التنقل: شفاف ثم blur عند السكرول + قائمة الموبايل ===== */
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;gap:18px;padding:14px 5vw;padding-top:calc(14px + env(safe-area-inset-top,0));transition:.35s}
+nav.s{background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--bd)}
+.logo{font-weight:900;font-size:24px;letter-spacing:.12em;margin-inline-end:auto}.logo img{height:30px;display:block}.logo b{color:var(--bl)}
+nav ul{display:flex;gap:20px;list-style:none;padding:0}nav ul a{font-size:14px;font-weight:600;opacity:.75;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a.on{opacity:1;border-color:var(--bl)}.ic{width:38px;height:38px;border-radius:50%;border:1px solid var(--bd);font-weight:700;font-size:13px}
+.burger{display:none;width:40px;height:40px;position:relative}.burger i{position:absolute;left:9px;right:9px;height:2px;background:currentColor;transition:.3s}
+.burger i:nth-child(1){top:14px}.burger i:nth-child(2){top:25px}.burger.x i:nth-child(1){top:20px;transform:rotate(45deg)}.burger.x i:nth-child(2){top:20px;transform:rotate(-45deg)}
+@media(max-width:980px){.burger{display:block}nav ul{position:fixed;inset:64px 0 auto;flex-direction:column;background:var(--bg);padding:20px 5vw;gap:6px;transform:translateY(-130%);transition:.4s;box-shadow:var(--sh)}nav ul.o{transform:none}nav ul a{font-size:18px;display:block;padding:12px 0}nav .gs{display:none}}
+/* ===== المقدمة السينمائية (overlay بملء الشاشة) ===== */
+#intro{position:fixed;inset:0;z-index:100;background:#071426;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;perspective:900px}
+#intro canvas{position:absolute;inset:0;width:100%;height:100%}
+.iw{display:flex;gap:.02em;font-size:clamp(56px,16vw,200px);font-weight:900;letter-spacing:.04em;position:relative;direction:ltr;transform-style:preserve-3d}
+.iw span{display:inline-block;background:linear-gradient(180deg,#fff,#60A5FA 60%,#2563EB);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(96,165,250,.5))}
+.itag{position:relative;letter-spacing:.35em;font-size:clamp(10px,1.6vw,16px);margin-top:18px;opacity:0;color:#A8B8CC;text-align:center;padding:0 10px}
+#skip{position:absolute;bottom:calc(30px + env(safe-area-inset-bottom,0));inset-inline-end:5vw;border:1px solid #60A5FA;padding:10px 22px;border-radius:99px;color:#fff;z-index:2;font-size:14px}
+/* ===== قسم الـ Hero: كلمة ADEXA الضخمة ومؤشر السكرول ===== */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding-top:110px}
+#hc{position:absolute;inset:0;width:100%;height:100%}
+.hg{position:relative;direction:ltr;font-size:clamp(70px,22vw,330px);font-weight:900;line-height:.9;letter-spacing:.03em;display:flex;justify-content:center;transform-style:preserve-3d;margin-bottom:10px}
+.hg span{display:inline-block;color:#F0F7FF;text-shadow:0 1px 0 #60A5FA,0 2px 0 #3b82f6,0 3px 0 #2563EB,0 4px 0 #1d4ed8,0 5px 0 #1e40af,0 14px 30px rgba(37,99,235,.45)}
+.hg span:nth-child(4){color:#60A5FA}
+.hero h1{font-size:clamp(14px,2.2vw,22px);letter-spacing:.3em;color:var(--ac);font-weight:800;margin:14px 0}
+.hero p{margin:12px auto 26px}.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.xs{width:84px;height:84px;margin:0 auto 6px;display:block;overflow:visible}.xs .a,.xs .b{stroke:url(#xg);stroke-width:9;stroke-linecap:round}
+.scr{position:absolute;bottom:22px;left:50%;width:22px;height:36px;border:2px solid var(--ac);border-radius:12px;translate:-50% 0}.scr:after{content:"";position:absolute;left:8px;top:6px;width:2px;height:7px;background:var(--ac);animation:sc 1.6s infinite}@keyframes sc{50%{transform:translateY(10px);opacity:.2}}

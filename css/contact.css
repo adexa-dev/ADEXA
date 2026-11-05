@@ -1,0 +1,20 @@
+/* contact.css — قسم التواصل والفورم والفوتر */
+
+/* ===== قسم التواصل + الفورم + روابط التواصل المباشر ===== */
+#contact{text-align:center;overflow:hidden}#cc{position:absolute;inset:0;width:100%;height:100%;opacity:.8}
+.cw{position:relative;max-width:760px;margin:auto}.cw h2{color:#fff}.cw .sub{margin:auto}
+form{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:start}form .f{grid-column:span 2}
+label{font-size:13px;font-weight:600;display:block;margin-bottom:6px;color:#cfe0f5}input,select,textarea{width:100%;padding:13px 14px;border-radius:12px;border:1px solid #1d3a63;background:#0B1F3B;color:#fff;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ac)}.er{color:#fca5a5;font-size:12px;min-height:16px;display:block}
+#fm{grid-column:span 2;padding:12px;border-radius:12px;display:none}#fm.ok{display:block;background:#064e3b}#fm.no{display:block;background:#7f1d1d}
+.dl{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}.dl a{padding:10px 18px;border:1px solid #1d3a63;border-radius:99px;font-size:14px}.dl a:hover{border-color:var(--ac)}
+@media(max-width:600px){form{grid-template-columns:1fr}form .f{grid-column:auto}#fm{grid-column:auto}}
+/* ===== الفوتر وزر الرجوع للأعلى (#top) وشريط تقدم السكرول (.sl) ===== */
+footer{background:#050e1c;color:#A8B8CC;padding:60px 5vw 30px}footer .fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;max-width:1200px;margin:auto}footer h5{color:#fff;margin-bottom:12px}footer a{display:block;padding:4px 0;font-size:14px}footer a:hover{color:#60A5FA}
+.cp{max-width:1200px;margin:34px auto 0;padding-top:20px;border-top:1px solid #1d3a63;font-size:13px}@media(max-width:800px){footer .fg{grid-template-columns:1fr 1fr}}
+#top{position:fixed;bottom:22px;inset-inline-end:22px;width:46px;height:46px;border-radius:50%;background:var(--bl);color:#fff;z-index:40;opacity:0;pointer-events:none;transition:.3s}#top.v{opacity:1;pointer-events:auto}
+.sl{position:fixed;top:0;inset-inline:0;height:3px;background:var(--bl);transform-origin:left;transform:scaleX(0);z-index:60}
+
+/* أزرار قنوات التواصل الكبيرة (واتساب/إنستغرام/إيميل) وصندوق الرسالة الجاهزة */
+.dl a{padding:14px 26px;font-size:16px;font-weight:700}.off{opacity:.4;pointer-events:none}
+.cmsg{max-width:520px;margin:24px auto 0;background:#0B1F3B;border:1px solid #1d3a63;border-radius:16px;padding:16px;text-align:start}.cmsg[hidden]{display:none}.cmsg textarea{margin:10px 0}

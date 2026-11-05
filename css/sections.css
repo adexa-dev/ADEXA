@@ -1,0 +1,41 @@
+/* sections.css — أقسام الصفحة: الكروت، الباقات، مراحل العمل، الأعمال، الأسئلة الشائعة */
+
+/* ===== الكروت العامة والشبكات (.card/.grid) — تُستعمل بالخدمات والباقات ===== */
+.grid{display:grid;gap:22px;margin-top:44px}.g3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:28px;box-shadow:var(--sh);transform-style:preserve-3d;transition:transform .15s,border-color .3s}
+.card:hover{border-color:var(--ac)}.card h3{font-size:20px;margin:14px 0 8px}.card p{color:var(--tx2);line-height:1.6;font-size:15px}
+.ico{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#2563EB,#60A5FA);display:grid;place-items:center;color:#fff;font-weight:900}
+.card ul{padding-inline-start:18px;color:var(--tx2);font-size:14px;line-height:1.8;margin:10px 0}.card a.ex{color:var(--bl);font-weight:700;font-size:14px}
+/* ===== (قديم/غير مستخدم) الأبعاد الخمسة القديمة؛ استبدلناها بـ .lx بملف components.css ===== */
+.dims{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;perspective:1000px;position:relative}
+.dim{padding:26px 14px;border-radius:20px;border:1px solid var(--bd);background:var(--card);text-align:center;transition:.4s;cursor:default}
+.dim big{display:block;font-size:clamp(60px,8vw,110px);font-weight:900;direction:ltr;line-height:1;background:linear-gradient(180deg,#60A5FA,#2563EB);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dim:hover{transform:rotateY(-10deg) translateY(-8px);border-color:var(--ac);box-shadow:0 0 0 1px var(--ac),0 20px 40px rgba(37,99,235,.3)}
+.dim h4{margin:10px 0 6px}.dim p{font-size:13px;color:var(--tx2);line-height:1.5}
+@media(max-width:900px){.dims{grid-template-columns:1fr 1fr}}@media(max-width:480px){.dims{grid-template-columns:1fr}}
+.stmt{margin-top:40px;font-weight:900;letter-spacing:.15em;color:var(--bl);font-size:clamp(14px,2vw,20px)}
+/* ===== كروت الباقات (.pc) والسعر ===== */
+.pc{position:relative;display:flex;flex-direction:column}.pc.pop{border:2px solid var(--bl);transform:scale(1.03)}.pc .bd{position:absolute;top:-13px;inset-inline-start:24px;background:var(--bl);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:.1em}
+.pr{font-size:48px;font-weight:900;margin:14px 0 4px;direction:ltr;text-align:start}.pr small{font-size:15px;color:var(--tx2);font-weight:600}
+.pc ul{list-style:none;padding:0;flex:1}.pc li{padding:7px 0;display:flex;gap:10px}.pc li:before{content:"✓";color:var(--bl);font-weight:900}
+.note{margin-top:26px;color:var(--tx2);font-size:14px;text-align:center}
+/* ===== التابات (.tab) وشرائح الأعداد (.ch) — مستعملة بنافذة الباقة وفلتر الأعمال. (.tl/.wk قديمة غير مستخدمة) ===== */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0}.tab{padding:12px 22px;border-radius:99px;border:1px solid var(--bd);font-weight:700;background:var(--card)}.tab.on{background:var(--bl);color:#fff;border-color:var(--bl)}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}.tl:before{content:"";position:absolute;top:-14px;inset-inline:0;height:2px;background:linear-gradient(90deg,var(--bl),var(--ac))}
+.wk{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:20px;position:relative}.wk:before{content:"";position:absolute;top:-19px;inset-inline-start:20px;width:10px;height:10px;border-radius:50%;background:var(--bl);box-shadow:0 0 0 4px rgba(96,165,250,.3)}
+.wk small{color:var(--ac);font-weight:800;letter-spacing:.15em}.wk h4{margin:6px 0 14px;font-size:15px;min-height:38px}
+.ch{display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin-bottom:6px;font-size:13px;background:rgba(96,165,250,.1)}.ch b{font-size:16px}
+.ch.p{border-inline-start:3px solid #2563EB}.ch.v{border-inline-start:3px solid #a78bfa}.ch.s{border-inline-start:3px solid #34d399}.ch.f{border-inline-start:3px solid #fbbf24}
+.wk em{display:block;font-style:normal;font-size:12px;color:var(--tx2);margin-top:8px;line-height:1.5}
+.tot{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;font-weight:700}.tot span{background:var(--card);border:1px solid var(--bd);padding:8px 16px;border-radius:99px;font-size:14px}
+@media(max-width:900px){.tl{grid-template-columns:1fr;padding-inline-start:26px}.tl:before{top:0;bottom:0;inset-inline:auto;inset-inline-start:0;width:2px;height:auto}.wk:before{top:22px;inset-inline-start:-31px}}
+/* ===== مراحل العمل مع الخط المتحرك ===== */
+.pst{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;margin-top:50px}.pst:before{content:"";position:absolute;top:26px;inset-inline:5%;height:2px;background:var(--bl);transform-origin:left;transform:scaleX(var(--p,0))}
+.pst div{position:relative;padding-top:0}.pst i{width:54px;height:54px;border-radius:50%;background:var(--bg2);border:2px solid var(--bl);display:grid;place-items:center;font-weight:900;font-style:normal;margin-bottom:16px;position:relative;z-index:1}.pst h4{margin-bottom:8px}.pst p{color:var(--tx2);font-size:14px;line-height:1.6}
+@media(max-width:800px){.pst{grid-template-columns:1fr}.pst:before{display:none}}
+/* ===== كروت الأعمال (.pf) ===== */
+.pf{aspect-ratio:4/3;border-radius:20px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;color:#fff;background:linear-gradient(135deg,#0B1F3B,#2563EB);transition:.4s}.pf:nth-child(3n+2){background:linear-gradient(135deg,#2563EB,#60A5FA)}.pf:nth-child(3n){background:linear-gradient(135deg,#071426,#1d4ed8)}
+.pf:before{content:"X";position:absolute;inset-inline-end:14px;top:-20px;font-size:150px;font-weight:900;opacity:.12}.pf small{display:block;opacity:.8;font-size:12px;letter-spacing:.1em}.pf b{display:block;font-size:18px}.pf em{position:absolute;top:14px;inset-inline-start:14px;font-size:11px;background:rgba(255,255,255,.18);padding:4px 10px;border-radius:99px;font-style:normal}
+.pf.h{display:none}
+/* ===== الأسئلة الشائعة (details/summary) ===== */
+details{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px 24px;margin-bottom:12px}summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}summary:after{content:"+";color:var(--bl);font-size:22px;transition:.3s}details[open] summary:after{transform:rotate(45deg)}details p{color:var(--tx2);margin-top:12px;line-height:1.7}

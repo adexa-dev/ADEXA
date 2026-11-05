@@ -1,0 +1,38 @@
+/* components.css — مكوّنات تفاعلية: نافذة الباقة، حروف ADEXA، الشات بوت، الانتقالات، تقليل الحركة */
+
+/* نافذة تفاصيل الباقة / تفاصيل المشروع (#pm) — overlay مع blur */
+.pm{position:fixed;inset:0;z-index:90;background:rgba(5,14,28,.75);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:16px}.pm[hidden],.bw[hidden]{display:none}
+.pmp{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:24px;width:min(980px,100%);max-height:92vh;overflow:auto;padding:28px;position:relative}
+.pmx{position:absolute;top:14px;inset-inline-end:14px;width:36px;height:36px;border-radius:50%;border:1px solid var(--bd)}
+.pmh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-inline-end:44px;margin-bottom:18px}.pmh h3{font-size:30px}.pmh p{color:var(--tx2)}
+.bd2{background:var(--bl);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:.1em;display:inline-block;margin-bottom:8px}
+.pmg{display:grid;grid-template-columns:1fr 1.1fr;gap:26px;margin-top:20px}@media(max-width:800px){.pmg{grid-template-columns:1fr}}
+.fl{list-style:none;padding:0;margin-top:10px}.fl li{padding:6px 0;display:flex;gap:10px;font-size:14px}.fl li:before{content:"✓";color:var(--bl);font-weight:900}
+.wt{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.wt .tab{padding:8px 14px;font-size:13px}
+.pb{height:4px;background:var(--bd);border-radius:4px;margin-bottom:14px}.pb i{display:block;height:100%;background:linear-gradient(90deg,#2563EB,#60A5FA);border-radius:4px;transition:width .5s}
+.wc{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px}.wc h5{font-size:15px;margin-bottom:12px;letter-spacing:.05em}.wc ul{list-style:none;padding:0;font-size:13px;color:var(--tx2);margin-top:8px}.wc li{padding:4px 0}.wc li:before{content:"• ";color:var(--ac)}
+.pma{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.pc{cursor:pointer}
+/* ===== تجربة حروف ADEXA التفاعلية (.lx/.lt) والـ X ===== */
+.lx{display:flex;gap:clamp(6px,2vw,22px);justify-content:center;margin-top:44px;perspective:900px;direction:ltr}
+.lt{position:relative;width:clamp(56px,15vw,150px);aspect-ratio:3/4;border-radius:20px;border:1px solid var(--bd);background:var(--card);display:grid;place-items:center;overflow:hidden;transition:border-color .3s,box-shadow .3s}
+.lg{font-size:clamp(44px,10vw,110px);font-weight:900;line-height:1;color:var(--bl);display:block}
+.lt.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac),0 0 40px rgba(37,99,235,.45)}
+.lxs{width:70%;overflow:visible}.lxs line{stroke:var(--bl);stroke-width:10;stroke-linecap:round}.lxs g{transform-box:fill-box;transform-origin:center}
+.scan{position:absolute;left:0;right:0;top:0;height:3px;background:#60A5FA;box-shadow:0 0 14px #60A5FA;opacity:0}
+.dot{position:absolute;left:50%;top:50%;width:5px;height:5px;border-radius:50%;background:#60A5FA;pointer-events:none}
+.lp{max-width:640px;margin:30px auto 0;text-align:center;min-height:130px}.lp h3{font-size:26px;letter-spacing:.1em}.lp b{color:var(--bl);display:block;margin:6px 0 10px}.lp p{color:var(--tx2);line-height:1.7}
+.hcap{min-height:24px;margin-bottom:8px;color:var(--ac);letter-spacing:.2em;font-weight:700;font-size:14px}.hg span.hv{filter:drop-shadow(0 0 22px #60A5FA)}
+/* ===== الشات بوت: الزر العائم (.cbt) والنافذة (.bw) ===== */
+.cbt{position:fixed;bottom:22px;inset-inline-start:22px;width:52px;height:52px;border-radius:50%;background:var(--bl);color:#fff;z-index:45;font-size:22px;box-shadow:var(--sh)}
+.bw{position:fixed;bottom:84px;inset-inline-start:22px;width:min(340px,calc(100vw - 44px));height:min(460px,70vh);background:var(--card);border:1px solid var(--bd);border-radius:20px;z-index:45;display:flex;flex-direction:column;box-shadow:var(--sh);overflow:hidden}
+.bwh{padding:12px 16px;background:var(--nv);color:#fff;font-weight:800;display:flex;justify-content:space-between}
+#bm{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}.bb{background:var(--bg2);padding:10px 12px;border-radius:14px;font-size:13px;line-height:1.55;max-width:92%;align-self:flex-start}.bb.me{background:var(--bl);color:#fff;align-self:flex-end}.bb a{color:var(--bl);font-weight:700}
+#bq{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 8px}#bq button{font-size:12px;border:1px solid var(--bd);border-radius:99px;padding:5px 10px}
+#bf{display:flex;border-top:1px solid var(--bd)}#bf input{flex:1;border:0;padding:12px;background:none;color:var(--tx);font:inherit;outline:0}#bf button{padding:0 16px;color:var(--bl);font-weight:900}
+/* ===== انتقالات الأقسام: خط ضوئي (.sw) + X دوّارة، وعلامة X قبل العناوين (.eye:before) ===== */
+.sw{position:absolute;top:0;inset-inline:0;height:2px;z-index:2;pointer-events:none}.sw i{display:block;height:100%;background:linear-gradient(90deg,transparent,#60A5FA,#2563EB,transparent);box-shadow:0 0 14px #60A5FA;transform-origin:left}
+.sw:after,.eye:before{content:"";display:inline-block;background:linear-gradient(45deg,transparent 44%,var(--bl) 44% 56%,transparent 56%),linear-gradient(-45deg,transparent 44%,var(--bl) 44% 56%,transparent 56%);animation:xsp 8s linear infinite}
+.sw:after{position:absolute;left:50%;top:-14px;width:30px;height:30px;translate:-50% 0}.eye:before{width:14px;height:14px;margin-inline-end:8px;vertical-align:middle}
+@keyframes xsp{to{transform:rotate(360deg)}}.card{background-image:radial-gradient(220px circle at var(--mx,-999px) var(--my,-999px),rgba(96,165,250,.16),transparent 70%)}.btn{transition:transform .2s,box-shadow .2s,translate .2s}
+/* احترام إعدادات "تقليل الحركة": بيوقف كل الأنيميشن (لازم يبقى آخر قاعدة) */
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
