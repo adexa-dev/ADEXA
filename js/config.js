@@ -13,7 +13,11 @@
 const CONFIG={
  logo:"assets/logo.png", /* path/URL of official logo image; empty = text wordmark */
  formEndpoint:"",ogImage:"", /* absolute URL of social share image */ /* e.g. Formspree URL; form will not claim success without it */
- contact:{whatsapp:"0792005378",instagram:"https://www.instagram.com/adexa.bu/",email:"adixa.business@gmail.com"}, /* fill with official details */
+ contact: {
+    whatsapp: "962792005378",
+    instagram: "https://www.instagram.com/adexa.bu/",
+    email: "adexa.business@gmail.com",
+},/* fill with official details */
  packages:[
  {id:"start",name:"ADEXA START",price:129,posts:8,reels:4,photo:0,
   weeks:{posts:[2,2,2,2],reels:[1,1,1,1],photo:[0,0,0,0],notes:[["pl"],["pu"],["op"],["rv"]]},
